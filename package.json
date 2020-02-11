@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "jest"
+  },
+  "author": "Naveed Elahi",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.10.0",
+    "apollo-server-testing": "^2.10.0",
+    "graphql": "^14.6.0",
+    "jest": "^25.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
