@@ -23,12 +23,6 @@ const server = new ApolloServer({
 });
 const { query } = createTestClient(server)
 
-const GET_VARIANT = gql`
-    {
-        variant
-    }
-`
-
 describe('apps', () => {
     const GET_APPS = gql`
         {
@@ -83,8 +77,17 @@ describe('app', () => {
     })
 });
 
-test('it returns a variant from amongst supported variants', async () => {
-    const res = await query({query: GET_VARIANT})
-    expect(res.data).not.toBe(undefined)
-    expect(SUPPORTED_VARIANTS).toContain(res.data.variant)
-})
+
+describe('variant', function () {
+    const GET_VARIANT = gql`
+        {
+            variant
+        }
+    `
+
+    test('it returns a variant from amongst supported variants', async () => {
+        const res = await query({query: GET_VARIANT})
+        expect(res.data).not.toBe(undefined)
+        expect(SUPPORTED_VARIANTS).toContain(res.data.variant)
+    })
+});
